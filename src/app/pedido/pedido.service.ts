@@ -32,14 +32,21 @@ export class PedidoService {
 
   buscaProdutos() {
     return this.httpClient.get<Produto[]>(url + '/cardapio');
-     
-    
+       
+  }
+
+  buscaPedidos() {
+    return this.httpClient.get<Pedido[]>(url + '/pedidos');
   }
 
   realizaPedido() {
     return this.httpClient.post<Pedido>(url + '/pedidos', {
       itens: this.itens
     });
+  }
+
+  carregaPedido(idPedido: number) {
+    return this.httpClient.get<Pedido>(url + '/pedidos/' + idPedido);
   }
 
   get valorTotal() {

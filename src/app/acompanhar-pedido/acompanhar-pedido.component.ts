@@ -1,4 +1,7 @@
+import { PedidoService } from './../pedido/pedido.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Pedido } from '../pedido';
 
 @Component({
   selector: 'app-acompanhar-pedido',
@@ -8,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcompanharPedidoComponent implements OnInit {
 
-  constructor() { }
+  idPedido: number = 0;
+  pedido: Pedido | null = null;
+  constructor(private route: ActivatedRoute, public pedidoService: PedidoService) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(paramMap =>  {
+      this.idPedido = parseInt(paramMap.get("idPedido") || "0");
+      this.carregaPedido();
+    })
   }
-
+  carregaPedido() {
+    this.pedidoService.carregaPedido(this.idPedido).subscribe(pedido => {
+      this.pedido = pedido;
+    })
+  }
 }
