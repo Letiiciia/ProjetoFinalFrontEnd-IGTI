@@ -19,6 +19,7 @@ import localePt from '@angular/common/locales/pt';
 import { AcompanharPedidoComponent } from './acompanhar-pedido/acompanhar-pedido.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { AtualizarPedidoComponent } from './atualizar-pedido/atualizar-pedido.component';
+import { FormsModule } from '@angular/forms';
 registerLocaleData(localePt);
 
 @NgModule({
@@ -39,7 +40,8 @@ registerLocaleData(localePt);
     MatToolbarModule,
     MatButtonModule,
     MatBadgeModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]

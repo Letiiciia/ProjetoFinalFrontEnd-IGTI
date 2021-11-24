@@ -1,3 +1,5 @@
-<a *ngFor="let pedido of pedidos" [routerLink]="['/pedidos', pedido.id, 'atualizar']">
-  {{pedido.id}}
-</a>>
+<ol>
+    <li *ngFor="let pedido of pedidos" 
+    [routerLink]="['/pedidos', pedido.id, 'atualizar']">{{pedido.id}} {{pedido.situacao}}</li>
+</ol>  
+
