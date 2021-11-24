@@ -39,3 +39,17 @@ app-root {
 .fs-small {
   font-size: smaller;
 }
+
+.button {
+  border-style: solid;
+  border-color: rgb(89, 81, 204);
+  width: 12%;
+  height: 5%;
+  margin: 1em;
+  margin-bottom: 1em;
+
+}
+
+.ol {
+  font-size: larger;
+}

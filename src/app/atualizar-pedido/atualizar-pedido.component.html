@@ -1,4 +1,10 @@
-
+<div class="header">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Acompanhar pedido</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
 <div *ngIf="pedido">
   <div>Id: {{pedido.id}}</div>
   <div>Data e Hora: {{pedido.dataHora}}</div>
@@ -10,5 +16,7 @@
       <option>Entregue</option>
     </select>
   </div> 
-  <button (click)="salva()">Salvar</button>
+  <div class="button">
+  <button mat-button color="primary" (click)="salva()">Salvar</button>
+</div>
 </div>

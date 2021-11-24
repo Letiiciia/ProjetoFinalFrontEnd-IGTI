@@ -1,3 +1,10 @@
+<div class="header">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Acompanhar pedido</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
 <ol>
     <li *ngFor="let pedido of pedidos" 
     [routerLink]="['/pedidos', pedido.id, 'atualizar']">{{pedido.id}} {{pedido.situacao}}</li>
